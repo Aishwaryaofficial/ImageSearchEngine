@@ -15,7 +15,6 @@ class MainVC : UIViewController {
     
    
     @IBOutlet weak var searchButton: UIButton!
-  
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var imageCollectionView: UICollectionView!
    
@@ -53,13 +52,22 @@ class MainVC : UIViewController {
        
         Webservices().fetchDataFromPixabay(withQuery: query,
                                            success: { (images : [ImageInfo]) in
+                                            
+            if images.count == 0 {
+                let alert = UIAlertController(title: "Alert", message: "Not Found", preferredStyle: .alert )
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                                                
+            }
             
             self.imagesList = images
             self.imageCollectionView.reloadData()
             
             }) { (error : Error) in
         
-                print(error)
+                let alert = UIAlertController(title: "Alert", message: "No Internet Connection", preferredStyle: .alert )
+              alert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
         }
     }
 }
@@ -91,7 +99,7 @@ extension MainVC : UICollectionViewDataSource,UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return imagesList.count
+        return imagesList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
