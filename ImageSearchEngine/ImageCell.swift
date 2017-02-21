@@ -15,7 +15,12 @@ class ImageCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
+        imageView.contentMode = .scaleAspectFill
     }
     
+    override func prepareForReuse() {
+       imageView.image = nil
+    }
 
 }

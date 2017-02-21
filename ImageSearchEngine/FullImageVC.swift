@@ -14,16 +14,22 @@ class FullImageVC: UIViewController {
     
     // MARK: variable
     
+    @IBOutlet weak var fullImageView: UIImageView!
     var  imageURL : URL!
 
     //MARK: LIFE CYCLE
-@IBOutlet weak var fullImageView: UIImageView!
+    
     override func viewDidLoad() {
-    super.viewDidLoad()
-        }
-    override func viewWillLayoutSubviews() {
-      
-    fullImageView.af_setImage(withURL : imageURL )
+        super.viewDidLoad()
+        
+        fullImageView.af_setImage(withURL : imageURL )
 
     }
+    
+    override func viewWillLayoutSubviews() {
+      
+        super.viewWillLayoutSubviews()
+
+    }
+    
 }

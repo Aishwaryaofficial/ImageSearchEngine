@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct xib{
-    let  name : String
+struct Xib {
+    
+    let name : String
     let id : String
     
     init(name : String, id : String){

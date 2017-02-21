@@ -11,7 +11,7 @@ import AlamofireImage
 
 class MainVC : UIViewController {
     
-    //MARK:   varOutlet
+    //MARK:   @IBOutlet
     
    
     @IBOutlet weak var searchButton: UIButton!
@@ -21,8 +21,8 @@ class MainVC : UIViewController {
    
     // MARK: DECLEARING XIB
     
-    let imageCell = xib(name: "ImageCell", id: "ImageCellID")
-    let fullImageVC = xib(name: "FullImageVC", id: "FullImageID")
+    let imageCell = Xib(name: "ImageCell", id: "ImageCellID")
+    let fullImageVC = Xib(name: "FullImageVC", id: "FullImageID")
 
     var imagesList : [ImageInfo] = []
 
@@ -30,6 +30,8 @@ class MainVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.automaticallyAdjustsScrollViewInsets = false
         
         let cellNib = UINib(nibName:imageCell.name , bundle: nil)
         imageCollectionView.register(cellNib, forCellWithReuseIdentifier: imageCell.id)
@@ -45,9 +47,20 @@ class MainVC : UIViewController {
         flowLayout.scrollDirection = .vertical
         imageCollectionView.collectionViewLayout = flowLayout
         
+    }
+    
+    func fetchDataFromPixabay(withQuery query: String) {
+       
+        Webservices().fetchDataFromPixabay(withQuery: query,
+                                           success: { (images : [ImageInfo]) in
+            
+            self.imagesList = images
+            self.imageCollectionView.reloadData()
+            
+            }) { (error : Error) in
         
-        self.automaticallyAdjustsScrollViewInsets = false
-        
+                print(error)
+        }
     }
 }
 // MARK: UISearchBarDelegate
@@ -56,19 +69,9 @@ extension MainVC : UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
    
+        fetchDataFromPixabay( withQuery: searchBar.text!)
         
-        Webservices().fetchDataFromPixabay(withQuery: searchBar.text!, success: { (images : [ImageInfo]) in
-            
-            self.imagesList = images
-            print("hit")
-            self.imageCollectionView.reloadData()
-            
-        }) { (error : Error) in
-            print(error)
-        }
     }
-
-    
 }
 
 // MARK: UICollectionViewDataSource,UICollectionViewDelegate
@@ -82,7 +85,7 @@ extension MainVC : UICollectionViewDataSource,UICollectionViewDelegate {
         if let url = URL(string: imagesList[indexPath.row].previewURL) {
             cell.imageView.af_setImage(withURL : url)
         }
-            cell.imageView.contentMode = .scaleAspectFill
+        
 
         return cell
     }
