@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ryl-Eu-sYJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ImageSearchEngine-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainID" id="BYZ-38-t0r" customClass="MainVC" customModule="ImageSearchEngine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="control view">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyM-0t-e3m">
+                                <rect key="frame" x="0.0" y="64" width="375" height="103"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Tqc-5I-vLf">
+                                        <rect key="frame" x="87" y="42" width="200" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="bWa-Ki-JVE" userLabel="height = 20"/>
+                                            <constraint firstAttribute="width" constant="200" id="ceV-fr-tfU" userLabel="width = 200"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Tqc-5I-vLf" firstAttribute="centerY" secondItem="uyM-0t-e3m" secondAttribute="centerY" id="69w-Md-HWa"/>
+                                    <constraint firstItem="Tqc-5I-vLf" firstAttribute="centerX" secondItem="uyM-0t-e3m" secondAttribute="centerX" id="6Ix-Sb-F4r"/>
+                                    <constraint firstAttribute="height" constant="103" id="7ks-cn-HPE"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2sm-tM-KLv">
+                                <rect key="frame" x="0.0" y="167" width="375" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="U6X-fW-o4n"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IrU-1X-Dea">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2sm-tM-KLv" firstAttribute="top" secondItem="uyM-0t-e3m" secondAttribute="bottom" id="7mf-y2-1s8"/>
+                            <constraint firstAttribute="trailing" secondItem="uyM-0t-e3m" secondAttribute="trailing" id="L32-3Z-fT9"/>
+                            <constraint firstItem="2sm-tM-KLv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Mas-Tn-XD6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2sm-tM-KLv" secondAttribute="trailing" constant="-16" id="kEg-08-Xs9"/>
+                            <constraint firstItem="uyM-0t-e3m" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rrs-P6-bPv"/>
+                            <constraint firstItem="uyM-0t-e3m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uzD-DT-Wc9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ImageSearchEngine" id="aGs-hR-JHA"/>
+                    <connections>
+                        <outlet property="imageCollectionView" destination="2sm-tM-KLv" id="oyh-o1-qyA"/>
+                        <outlet property="searchBar" destination="Tqc-5I-vLf" id="C8C-Jv-cvX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+        </scene>
+        <!--Full ImageVC-->
+        <scene sceneID="fgF-yd-Doj">
+            <objects>
+                <viewController storyboardIdentifier="FullImageID" id="4TB-pv-vdG" customClass="FullImageVC" customModule="ImageSearchEngine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I7y-a8-S9Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cq3-Jt-jhU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cRc-cf-qaT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vdy-F9-GV8">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cq3-Jt-jhU" firstAttribute="top" secondItem="vdy-F9-GV8" secondAttribute="bottom" id="0kw-GU-ACc"/>
+                            <constraint firstItem="vdy-F9-GV8" firstAttribute="leading" secondItem="cRc-cf-qaT" secondAttribute="leading" id="iEg-HL-9b0"/>
+                            <constraint firstItem="vdy-F9-GV8" firstAttribute="top" secondItem="I7y-a8-S9Z" secondAttribute="bottom" id="pc1-tZ-aRE"/>
+                            <constraint firstAttribute="trailing" secondItem="vdy-F9-GV8" secondAttribute="trailing" id="uxe-i0-DcA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fullImageView" destination="vdy-F9-GV8" id="mlM-PY-shv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nvQ-V1-j32" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1823" y="124"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jcN-zQ-P0E">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ryl-Eu-sYJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MS9-Wf-ZlE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AWe-PX-eDa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W46-Y0-pzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="124"/>
+        </scene>
+    </scenes>
+</document>

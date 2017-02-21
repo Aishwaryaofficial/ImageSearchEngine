@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A50580DD6D9403C683B4135A1661FA9FD14145C0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A50580DD6D9403C683B4135A1661FA9FD14145C0" : 9223372036854775807,
+    "F95C66D8BBC256A6D3B0699A32C65E835A527882" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "38D2EB1D-69FD-4EA8-A244-02CC62DA941E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A50580DD6D9403C683B4135A1661FA9FD14145C0" : "ImageSearchEngine\/",
+    "F95C66D8BBC256A6D3B0699A32C65E835A527882" : "..\/..\/Downloads\/MovieTime%202"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ImageSearchEngine",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ImageSearchEngine.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Aishwaryaofficial\/ImageSearchEngine.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A50580DD6D9403C683B4135A1661FA9FD14145C0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Acumen004\/MovieTime.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F95C66D8BBC256A6D3B0699A32C65E835A527882"
+    }
+  ]
+}
